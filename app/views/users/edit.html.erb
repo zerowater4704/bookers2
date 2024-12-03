@@ -1,40 +1,38 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-
-    <h1>User info</h1>
-
-    <%= form_with model: @user do |f| %>
-      <div id="error_explanation">
-        <% if @user.errors.any? %>
-        <h2><%= @user.errors.count %> errors prohibited this obj from being saved:</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+      <h1>User info</h1>
+      <%= form_with model: @user do |f| %>
+        <div id="error_explanation">
+          <% if @user.errors.any? %>
+          <h2><%= @user.errors.count %> errors prohibited this obj from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
           <% end %>
-        </ul>
-        <% end %>
-      </div>
+        </div>
 
-      <div class="form-group">
-      <label for="inputName">Name</label>
-      <%= f.text_field :name, autofocus: true, id:"inputName", class: "form-control" %>
-      </div>
+        <div class="form-group">
+          <label for="inputName">Name</label>
+          <%= f.text_field :name, autofocus: true, id:"inputName", class: "form-control" %>
+        </div>
 
-      <div class="form-group">
-      <label for="inputImage">Image</label>
-      <%= f.file_field :profile_image, id:"inputImage", accept: "images/*", class: "form-control-file" %>
-      </div>
+        <div class="form-group">
+          <label for="inputImage">Image</label>
+          <%= f.file_field :profile_image, id:"inputImage", accept: "images/*", class: "form-control-file" %>
+        </div>
 
-      <div class="form-group">
-      <label for="inputIntroduction">Introduction</label>
-      <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction",class: "form-control" %>
-      </div>
+        <div class="form-group">
+          <label for="inputIntroduction">Introduction</label>
+          <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction",class: "form-control" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.submit "Update User", class: "btn btn-secondary" %>
-      </div>
-    <% end %>
+        <div class="form-group">
+          <%= f.submit "Update User", class: "btn btn-secondary" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
